@@ -1,19 +1,13 @@
-name: CI Pipeline
+name: First Workflow
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Show files
-        run: ls
-
-      - name: Echo message
-        run: echo "GitHub Actions working"
+      - uses: actions/checkout@v4
+      - run: echo "Workflow running"
